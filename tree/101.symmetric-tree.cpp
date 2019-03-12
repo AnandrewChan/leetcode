@@ -49,16 +49,21 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
-class Solution {
-public:
-    bool isSymmetric(TreeNode* root) {
-        return !root||dfs(root->left,root->right);
+class Solution
+{
+  public:
+    bool isSymmetric(TreeNode *root)
+    {
+        return !root || dfs(root->left, root->right);
     }
-private:
-    bool dfs(TreeNode* left,TreeNode* right){
-        if(!left||!right)return left==right;
-        if(left->val!=right->val)return false;
-        return dfs(left->left,right->right)&&dfs(left->right,right->left);
+
+  private:
+    bool dfs(TreeNode *left, TreeNode *right)
+    {
+        if (!left || !right)
+            return left == right;
+        if (left->val != right->val)
+            return false;
+        return dfs(left->left, right->right) && dfs(left->right, right->left);
     }
 };
-
