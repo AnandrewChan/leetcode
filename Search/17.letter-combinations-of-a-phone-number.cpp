@@ -32,21 +32,18 @@
  * in any order you want.
  * 
  */
-class Solution
-{
-  public:
+class Solution {
+public:
     vector<string> letterCombinations(string digits)
     {
         if (digits.empty())
             return {};
-        vector<string> an{""};
-        string dict[] = {"abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
-        for (int i = 0; i < digits.size(); i++)
-        {
+        vector<string> an{ "" };
+        string dict[] = { "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
+        for (int i = 0; i < digits.size(); i++) {
             vector<string> t;
             string str = dict[digits[i] - '2'];
-            for (int j = 0; j < str.size(); j++)
-            {
+            for (int j = 0; j < str.size(); j++) {
                 for (string s : an)
                     t.push_back(s + str[j]);
             }
